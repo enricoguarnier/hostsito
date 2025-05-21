@@ -6,20 +6,21 @@
     <link rel="stylesheet" href="css/style.css">
     <title>CAI Organitation</title>
    <script>
-  window.onload = function () {
-    const userAgent = navigator.userAgent.toLowerCase();
-
-    const isMobile = /iphone|ipod|android.*mobile|windows phone|blackberry/.test(userAgent);
-    const isTablet = /ipad|android(?!.*mobile)/.test(userAgent);
-    
-    if (isMobile) {
-      window.location.href = "mobile.html";
-    } else if (isTablet) {
-      window.location.href = "tablet.html";
-    } else {
-        window.location.href ="desktop-attività.html";
-    }
+        function redirectBasedOnDevice(){
+            const ua = navigartor.userAgent.toLowerCase();
+            const width = window.innerWidth;
+            if (/iphone|android.*mobile|windows phone/ .test(ua)|| width <= 480 {
+                window.location.href = "mobile.html";
+            }
+            else if (/ipad|andorid(?!.*mobile)/.test(ua) || width >480 && width <= 1024)) {
+                window.location.href = "tablet.html";
+            }
+            else if (/hp|hewlett-packard/ .test(ua)) {
+                window.location.href = "hp.html";
+            }
+            
   };
+       window.onload = redirectBasedOnDevice;
 </script>
 
 
