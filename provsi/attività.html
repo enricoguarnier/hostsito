@@ -5,23 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAI ATTIVIT&Agrave;</title>
     <link rel="stylesheet" href="css/style2.css">
-    <script>
-        function redirectBasedOnDevice(){
-            const ua = navigartor.userAgent.toLowerCase();
-            const width = window.innerWidth;
-            if (/iphone|android.*mobile|windows phone/ .test(ua)|| width <= 480 {
-                window.location.href = "mobile.html";
-            }
-            else if (/ipad|andorid(?!.*mobile)/.test(ua) || width >480 && width <= 1024)) {
-                window.location.href = "tablet.html";
-            }
-            else if (/hp|hewlett-packard/ .test(ua)) {
-                window.location.href = "attività-hp.html";
-            }
-            
-  };
-       window.onload = redirectBasedOnDevice;
-</script>
+     <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const larghezza = window.innerWidth;
+
+      // Evita loop se sei già nella pagina giusta
+      const currentPage = window.location.pathname;
+
+      if (larghezza < 768 && !currentPage.includes("mobile.html")) {
+        window.location.href = "mobile.html";
+      } else if (larghezza >= 768 && larghezza <= 1024 && !currentPage.includes("tablet.html")) {
+        window.location.href = "tablet.html";
+      } else if (larghezza > 1024 && !currentPage.includes("attivta-hp.html")) {
+        window.location.href = "attita-hp.html";
+      }
+    });
+  </script>
 </head>
 <body>
     <div id="img1">
